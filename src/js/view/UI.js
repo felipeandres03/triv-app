@@ -56,19 +56,21 @@ export default class UI {
     }
 
     returnCard(question) {
-        const card = `<div class="card mb-5">
-                        <div class="card-body">
-                        <h4 class="card-title">${question.category}</h4>
-                        <h5 class="card-subtitle mb-2 text-muted">${question.question}</h5>
-                        <form name="formulario" id="answer ${question.id}" action="" method="POST">
-                        ${this.returnAnswersHTML(
-                                        question.correct_answer,
-                                        question.incorrect_answers,
-                                        question.id
-                                    )}
-                            </form>   
-                        </div>
-                    </div>`;
+        const card = ` <div class="col-lg-4 col-md-4 col-sm-4 mb-5">
+                            <div class="card h-100">
+                                <div class="card-body color-1">
+                                <h4 class="card-title text-muted">${question.category}</h4>
+                                <h5 class="card-subtitle mb-2">${question.question}</h5>
+                                <form name="formulario" id="answer ${question.id}" action="" method="POST">
+                                ${this.returnAnswersHTML(
+                                                question.correct_answer,
+                                                question.incorrect_answers,
+                                                question.id
+                                            )}
+                                    </form>   
+                                </div>
+                            </div>
+                        </div>`;
         return card;
     }
 
